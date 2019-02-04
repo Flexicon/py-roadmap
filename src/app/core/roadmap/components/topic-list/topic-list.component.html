@@ -1,0 +1,32 @@
+<div class="TopicList">
+  <div
+    class="TopicList__topic"
+    *ngFor="let topic of topics; trackBy: topicTrackBy"
+  >
+    <nz-card [nzTitle]="cardTitle">
+      <ng-template #cardTitle>
+        {{ topic.title }}
+        <i
+          *ngIf="(topic | isTopicDone)"
+          nz-icon
+          type="check-circle"
+          theme="twotone"
+          twoToneColor="#52C41A"
+        ></i>
+      </ng-template>
+
+      <div
+        class="TopicList__topic-item"
+        *ngFor="let item of topic.checklist; trackBy: itemTrackBy"
+      >
+        <label
+          nz-checkbox
+          [ngModel]="item.checked"
+          (ngModelChange)="toggleItem(item.id)"
+        >
+          {{ item.title }}
+        </label>
+      </div>
+    </nz-card>
+  </div>
+</div>
