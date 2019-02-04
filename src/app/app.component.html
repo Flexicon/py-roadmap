@@ -6,7 +6,7 @@
         <a routerLink="/">Roadmap</a>
       </li>
       <li nz-menu-item>
-        <a routerLink="/projects">Projects</a>
+        <a routerLink="/projects">Projects & Resources</a>
       </li>
       <li nz-menu-item>
         <a routerLink="/about">About</a>
@@ -14,11 +14,7 @@
     </ul>
   </nz-header>
   <nz-content class="App__content">
-    <div
-      style="background:#fff; padding: 24px; margin-top: 24px; min-height: 580px;"
-    >
-      Content
-    </div>
+    <router-outlet></router-outlet>
   </nz-content>
   <nz-footer class="App__footer">
     Made with
